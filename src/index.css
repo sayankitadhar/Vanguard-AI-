@@ -1,0 +1,173 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0F0524;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* App Layout */
+.app-container {
+  position: relative;
+  min-height: 150vh;
+  background-color: #0F0524;
+  color: white;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Backgrounds */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.nebula-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.4) 0%, rgba(15, 5, 36, 0) 70%);
+  filter: blur(60px);
+}
+
+.grid-bg {
+  z-index: 0;
+  opacity: 0.4;
+  background-image: linear-gradient(rgba(0, 242, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.hero-header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 1rem 0 0.5rem 0;
+  background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  perspective: 2000px;
+}
+
+/* Card Styles */
+.feature-card {
+  position: relative;
+  z-index: 10;
+  width: 20rem;
+  /* 80 equivalent */
+  height: 24rem;
+  /* 96 equivalent */
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  /* Glassmorphism */
+  background-color: rgba(30, 10, 60, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+  border-color: #00F2FF;
+}
+
+/* Card Content */
+.card-icon {
+  margin-bottom: 1.5rem;
+  color: #22d3ee;
+  /* Cyan-400 */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.card-desc {
+  color: #d1d5db;
+  /* Gray-300 */
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Scroll Hint */
+.scroll-hint {
+  height: 24rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
